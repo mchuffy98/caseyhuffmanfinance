@@ -748,16 +748,16 @@
   // Form handler — opens the visitor's email client with a pre-filled message to Casey
   const form = document.getElementById('consultForm');
   const formConfirm = document.getElementById('formConfirm');
-
+ 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-
+ 
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const topic = document.getElementById('topic').value.trim();
     const message = document.getElementById('message').value.trim();
-
+ 
     const subject = encodeURIComponent('Free consultation request — ' + name);
     const bodyLines = [
       'Name: ' + name,
@@ -769,21 +769,21 @@
       message
     ];
     const body = encodeURIComponent(bodyLines.join('\n'));
-
-    window.location.href = 'mailto:casey.huffman@keenanfinancial.com' + subject + '&body=' + body;
-
+ 
+    window.location.href = 'mailto:casey.huffman@keenanfinancial.com?subject=' + subject + '&body=' + body;
+ 
     // Show confirmation message
     formConfirm.style.display = 'block';
-
+ 
     // Reset form
     form.reset();
-
+ 
     // Hide confirmation after 5 seconds
     setTimeout(() => {
       formConfirm.style.display = 'none';
     }, 5000);
   });
-
+ 
   // Smooth scroll for navigation
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -795,6 +795,6 @@
     });
   });
 </script>
-
+ 
 </body>
 </html>
