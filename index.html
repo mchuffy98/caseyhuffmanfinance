@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Casey Huffman | Senior Financial Advisor, Keenan Financial</title>
-<meta name="description" content="Casey Huffman, Senior Financial Advisor at Keenan Financial. Wealth management and comprehensive financial planning. I help pre-retirees transition from wealth accumulation to wealth preservation with a game plan. Book a free consultation.">
+<meta name="description" content="Casey Huffman, Senior Financial Advisor at Keenan Financial. Wealth management and comprehensive financial planning. I help pre-retirees transition from wealth accumu[...]">
 <link rel="canonical" href="https://www.caseyhuffmanfinance.com/">
 
 <!-- Open Graph / Facebook, LinkedIn, iMessage previews -->
@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://www.caseyhuffmanfinance.com/preview.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;5[...]" rel="stylesheet">
 <style>
   :root{
     --ink: #16302B;
@@ -642,7 +642,8 @@
 <section class="about" id="about">
   <div class="wrap about-inner">
     <div class="about-photo">
-      <img src="file:///Users/MCHuffy98/Downloads/2026%20Phototour%20Viator%20Huffman%20Casey%2017-4/Profile%20Picture.JPG" alt="Casey Huffman">
+      <!-- Use a relative path inside the repo so the image will load on GitHub Pages. Add the image at assets/profile.jpg -->
+      <img src="assets/profile.jpg" alt="Casey Huffman">
     </div>
     <div class="about-text">
       <span class="mono">About Casey</span>
@@ -738,7 +739,7 @@
 
 <footer>
   <div class="footer-inner">
-    <p>&copy; Keenan, LLC dba Keenan Financial is a registered investment advisor with the United States Securities and Exchange Commission. This message contains confidential information and is intended for the recipient.  If you are not the intended recipient you are notified that disclosing, copying, distributing or taking any action in reliance on the contents of this information is strictly prohibited.  Email transmission cannot be certified to be secure or error-free as information could be intercepted, corrupted, lost, destroyed, arrive late or incomplete, or contain viruses.  The sender therefore does not accept liability for any errors or omissions in the contents of this message, which arise as a result of any email transmission sent or received.  If verification is required, please request a hard-copy version.</p>
+    <p>&copy; Keenan, LLC dba Keenan Financial is a registered investment advisor with the United States Securities and Exchange Commission. This message contains confidential information and is inten[...]
     <span class="mono">Keenan Financial</span>
   </div>
 </footer>
@@ -769,7 +770,8 @@
     ];
     const body = encodeURIComponent(bodyLines.join('\n'));
 
-    window.location.href = 'mailto:casey.huffman@keenanfinancial.com' + subject + '&body=' + body;
+    // Include the required '?' before the query string (subject & body)
+    window.location.href = 'mailto:casey.huffman@keenanfinancial.com?subject=' + subject + '&body=' + body;
 
     // Show confirmation message
     formConfirm.style.display = 'block';
