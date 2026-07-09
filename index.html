@@ -642,7 +642,7 @@
 <section class="about" id="about">
   <div class="wrap about-inner">
     <div class="about-photo">
-      <img src="file:///Users/MCHuffy98/Downloads/2026%20Phototour%20Viator%20Huffman%20Casey%2017-4/Profile%20Picture.JPG">
+      <img src="file:///Users/MCHuffy98/Downloads/2026%20Phototour%20Viator%20Huffman%20Casey%2017-4/Profile%20Picture.JPG" alt="Casey Huffman">
     </div>
     <div class="about-text">
       <span class="mono">About Casey</span>
@@ -690,7 +690,7 @@
       
       <div class="contact-detail">
         <span class="mono">Email</span>
-        <a href="casey.huffman@keenanfinancial.com">casey.huffman@keenanfinancial.com</a>
+        <a href="mailto:casey.huffman@keenanfinancial.com">casey.huffman@keenanfinancial.com</a>
       </div>
       <div class="contact-detail">
         <span class="mono">Phone</span>
@@ -744,19 +744,39 @@
 </footer>
 
 <script>
-  // Simple form handler
+  // Form handler — opens the visitor's email client with a pre-filled message to Casey
   const form = document.getElementById('consultForm');
   const formConfirm = document.getElementById('formConfirm');
 
   form.addEventListener('submit', function(e) {
     e.preventDefault();
-    
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const topic = document.getElementById('topic').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const subject = encodeURIComponent('Free consultation request — ' + name);
+    const bodyLines = [
+      'Name: ' + name,
+      'Email: ' + email,
+      'Phone: ' + (phone || 'Not provided'),
+      'Topic of interest: ' + (topic || 'Not specified'),
+      '',
+      'Message:',
+      message
+    ];
+    const body = encodeURIComponent(bodyLines.join('\n'));
+
+    window.location.href = 'mailto:casey.huffman@keenanfinancial.com?subject=' + subject + '&body=' + body;
+
     // Show confirmation message
     formConfirm.style.display = 'block';
-    
+
     // Reset form
     form.reset();
-    
+
     // Hide confirmation after 5 seconds
     setTimeout(() => {
       formConfirm.style.display = 'none';
